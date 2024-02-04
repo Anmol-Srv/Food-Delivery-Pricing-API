@@ -1,0 +1,71 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "API for a Food Delivery App's Dynamic Pricing Module",
+      "version": "1.0.0",
+      "title": "Food Delivery App Pricing API"
+    },
+    "host": "localhost:3001",
+    "basePath": "/api",
+    "tags": [
+      {
+        "name": "pricing",
+        "description": "Everything about your Pricing"
+      }
+    ],
+    "paths": {
+      "/pricing": {
+        "post": {
+          "tags": ["pricing"],
+          "summary": "Calculate delivery cost",
+          "description": "",
+          "consumes": ["application/json"],
+          "produces": ["application/json"],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Pricing information",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/PricingRequest"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful operation",
+              "schema": {
+                "$ref": "#/definitions/PricingResponse"
+              }
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "PricingRequest": {
+        "type": "object",
+        "properties": {
+          "zone": { "type": "string" },
+          "organization_id": { "type": "string" },
+          "total_distance": { "type": "number" },
+          "item_type": { "type": "string" }
+        },
+        "example": {
+          "zone": "central",
+          "organization_id": "005",
+          "total_distance": 12,
+          "item_type": "perishable"
+        }
+      },
+      "PricingResponse": {
+        "type": "object",
+        "properties": {
+          "total_price": { "type": "number" }
+        },
+        "example": { "total_price": 20.5 }
+      }
+    }
+  }
+  
