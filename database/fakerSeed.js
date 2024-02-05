@@ -32,17 +32,14 @@ const generatePricings = (organizationCount, itemCount, count) => {
 };
 
 const seedDatabase = async () => {
-  await sequelize.sync({ force: true }); // Warning: This drops and recreates tables
+  await sequelize.sync({ force: true }); 
 
-  // Seed Organizations with faker
   const organizations = generateOrganizations(10);
   await Organization.bulkCreate(organizations);
 
-  // Seed Items with faker
   const items = generateItems(20);
   await Item.bulkCreate(items);
 
-  // Seed Pricing with faker
   const pricings = generatePricings(organizations.length, items.length, 40);
   await Pricing.bulkCreate(pricings);
 

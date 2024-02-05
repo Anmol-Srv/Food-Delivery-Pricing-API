@@ -1,6 +1,5 @@
-// This assumes you're able to mock the service layer effectively
 const request = require('supertest');
-const app = require('../app'); // Adjust the path to where your Express app is exported
+const app = require('../app');
 
 jest.mock('../services/pricingService', () => ({
     calculateDeliveryCost: jest.fn().mockRejectedValue(new Error('Database connection error')),
@@ -13,7 +12,6 @@ jest.mock('../services/pricingService', () => ({
       expect(response.status).toBe(500);
       expect(response.body).toEqual({ message: "Internal server error. Please try again later." });
     });
-  
-    // Reset mock or add additional service error simulations as needed
+
   });
   
