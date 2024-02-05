@@ -14,10 +14,11 @@
 // }, {
 //   timestamps: false,
 // });
-import { DataTypes } from 'sequelize';
-import sequelize from './sequelize.js';
 
-export const Organization = sequelize.define('Organization', {
+const { DataTypes } = require('sequelize');
+const sequelize = require('./sequelize');
+
+const Organization = sequelize.define('Organization', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -31,3 +32,5 @@ export const Organization = sequelize.define('Organization', {
   timestamps: false,
   tableName: 'organizations',
 });
+
+module.exports = {Organization};
