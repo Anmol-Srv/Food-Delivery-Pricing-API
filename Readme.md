@@ -68,8 +68,6 @@ https://food-delivery-pricing-api-viga.onrender.com
 - **Description**: Swagger Landing page
 - **Authorization Required**: No
 
-![swagger page](https://drive.google.com/file/d/1cxaG37P5r1YER4MyVJEJAKgX7xAKvU_l/view?usp=sharing)
-
 #### Calculate Delivery Cost
 
 - **Endpoint**: `/api/pricing`
