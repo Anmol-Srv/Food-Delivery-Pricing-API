@@ -1,14 +1,18 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "description": "API for a Food Delivery App's Dynamic Pricing Module",
+    "description": "The Food Delivery Pricing API is a comprehensive solution designed to address the dynamic pricing needs of food delivery services. By leveraging this API, businesses can automatically calculate delivery charges based on several critical factors, including the type of food item (perishable or non-perishable), the delivery distance, and the specific delivery zone. ",
     "version": "1.0.0",
     "title": "Food Delivery App Pricing API"
   },
   "servers": [
     {
       "url": "https://food-delivery-pricing-api-viga.onrender.com/api",
-      "description": "Local development server"
+      "description": "production server"
+    },
+    {
+      "url": "https://localhost:3001/api",
+      "description": "local development server"
     }
   ],
   "tags": [
