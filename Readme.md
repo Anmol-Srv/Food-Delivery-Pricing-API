@@ -58,7 +58,7 @@ This section provides a comprehensive overview of the Food Delivery Pricing API,
 
 ### Base URL
 
-Define the base URL for all API requests: https://food-delivery-pricing-api-viga.onrender.com/api
+https://food-delivery-pricing-api-viga.onrender.com/api
 
 
 ### Endpoints
@@ -295,3 +295,14 @@ Tests are organized into files corresponding to the application components they 
 - `databaseErrors.test.js`: Ensures the application gracefully handles database errors.
 
 Each test file contains multiple test cases designed to cover a wide range of scenarios and edge cases.
+
+## Credits
+
+- Node.js: [https://nodejs.org/](https://nodejs.org/)
+- Express: [https://expressjs.com/](https://expressjs.com/)
+- Sequelize: [https://sequelize.org/](https://sequelize.org/)
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE.md file for details.
+
