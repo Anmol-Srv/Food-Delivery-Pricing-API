@@ -58,14 +58,19 @@ This section provides a comprehensive overview of the Food Delivery Pricing API,
 
 ### Base URL
 
-https://food-delivery-pricing-api-viga.onrender.com/api
+https://food-delivery-pricing-api-viga.onrender.com
 
 
 ### Endpoints
+#### Swagger Page
+- **Endpoint**: `/api-docs`
+- **Method**: `GET`
+- **Description**: Swagger Landing page
+- **Authorization Required**: No
 
 #### Calculate Delivery Cost
 
-- **Endpoint**: `/pricing`
+- **Endpoint**: `/api/pricing`
 - **Method**: `POST`
 - **Description**: Calculates the delivery cost based on distance, item type, and delivery zone.
 - **Authorization Required**: No
