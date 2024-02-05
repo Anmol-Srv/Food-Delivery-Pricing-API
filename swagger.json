@@ -1,62 +1,65 @@
 {
-    "swagger": "3.0",
-    "info": {
-      "description": "API for a Food Delivery App's Dynamic Pricing Module",
-      "version": "1.0.0",
-      "title": "Food Delivery App Pricing API"
-    },
-    "servers": [
-      {
-        "url": "http://localhost:3001/api",
-        "description": "Local development server"
-      }
-    ],
-    "tags": [
-      {
-        "name": "pricing",
-        "description": "Everything about your Pricing"
-      }
-    ],
-    "paths": {
-      "/pricing": {
-        "post": {
-          "tags": ["pricing"],
-          "summary": "Calculate delivery cost",
-          "description": "",
-          "consumes": ["application/json"],
-          "produces": ["application/json"],
-          "parameters": [
-            {
-              "in": "body",
-              "name": "body",
-              "description": "Pricing information",
-              "required": true,
+  "openapi": "3.0.0",
+  "info": {
+    "description": "API for a Food Delivery App's Dynamic Pricing Module",
+    "version": "1.0.0",
+    "title": "Food Delivery App Pricing API"
+  },
+  "servers": [
+    {
+      "url": "https://food-delivery-pricing-api-viga.onrender.com/api",
+      "description": "Local development server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "pricing",
+      "description": "Everything about your Pricing"
+    }
+  ],
+  "paths": {
+    "/pricing": {
+      "post": {
+        "tags": ["pricing"],
+        "summary": "Calculate delivery cost",
+        "description": "",
+        "requestBody": {
+          "description": "Pricing information",
+          "required": true,
+          "content": {
+            "application/json": {
               "schema": {
-                "$ref": "#/definitions/PricingRequest"
+                "$ref": "#/components/schemas/PricingRequest"
               }
             }
-          ],
-          "responses": {
-            "200": {
-              "description": "Successful operation",
-              "schema": {
-                "$ref": "#/definitions/PricingResponse"
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PricingResponse"
+                }
               }
-            },
-            "400": {
-              "description": "Bad Request - Invalid request format or parameters"
-            },
-            "404": {
-              "description": "Not Found - The specified resource was not found"
-            },
-            "500": {
-              "description": "Internal Server Error - An error occurred on the server"
             }
-          }          
-        }
+          },
+          "400": {
+            "description": "Bad Request - Invalid request format or parameters"
+          },
+          "404": {
+            "description": "Not Found - The specified resource was not found"
+          },
+          "500": {
+            "description": "Internal Server Error - An error occurred on the server"
+          }
+        }          
       }
-    },
-    "definitions": {
+    }
+  },
+  "components": { 
+    "schemas": {
       "PricingRequest": {
         "type": "object",
         "properties": {
@@ -66,9 +69,9 @@
           "item_type": { "type": "string" }
         },
         "example": {
-          "zone": "suburban",
-          "organization_id": "6",
-          "total_distance": 9,
+          "zone": "central",
+          "organization_id": "7",
+          "total_distance": 15.1,
           "item_type": "perishable"
         }
       },
@@ -77,8 +80,8 @@
         "properties": {
           "total_price": { "type": "number" }
         },
-        "example": { "total_price": 24 }
+        "example": { "total_price": 37.2 }
       }
     }
   }
-  
+}
